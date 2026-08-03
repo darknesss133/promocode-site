@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО ПРОМОКОД — Официальный сайт</title>
+    <!-- Подключение шрифта JetBrains Mono -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #e1e8ed;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 25px 40px;
+        }
+
+        /* Шапка сайта */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-img {
+            height: 75px; 
+            width: auto;
+            display: block;
+        }
+
+        .logo-text h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 32px; 
+            color: #003366;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 13px;
+            color: #005580;
+            margin-top: 4px;
+        }
+
+        /* Стиль для почты */
+        .email-link {
+            color: #0077b5;
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Навигация с линиями */
+        nav {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            border-top: 1px solid #e1e8ed;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 10px 0;
+        }
+
+        nav button {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #0077b5;
+            border: none;
+            background: none;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav button:hover {
+            background-color: #f0f4f8;
+        }
+
+        nav button.active {
+            background-color: #0077b5;
+            color: #ffffff;
+        }
+
+        /* Основной контент */
+        main {
+            margin-bottom: 40px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        main p {
+            margin-bottom: 6px; 
+            color: #444444;
+            text-align: justify;
+        }
+
+        main p strong {
+            color: #222222;
+        }
+
+        main a {
+            color: #0077b5;
+            text-decoration: none;
+        }
+
+        main a:hover {
+            text-decoration: underline;
+        }
+
+        /* Логотип фонда на странице инноваций */
+        .fasie-logo {
+            float: left;
+            max-width: 180px;
+            height: auto;
+            margin: 5px 20px 10px 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Подвал */
+        footer {
+            border-top: 1px solid #e1e8ed;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #333333;
+        }
+
+        .footer-contacts p {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #333333;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            .logo-area {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav button {
+                width: 100%;
+                text-align: center;
+            }
+            .fasie-logo {
+                float: none;
+                display: block;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="Логотип Промокод" class="logo-img">
+            <div class="logo-text">
+                <h1>ООО "ПРОМОКОД"</h1>
+                <p>ИНН: 1800053797 | <a href="mailto:promocode18@yandex.ru" class="email-link">promocode18@yandex.ru</a></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Меню навигации (Главная добавлена первой и сделана активной) -->
+    <nav>
+        <button onclick="openTab('home-page')" id="btn-home-page" class="active">Главная</button>
+        <button onclick="openTab('it-page')" id="btn-it-page">Аккредитация ИТ</button>
+        <button onclick="openTab('innovation-page')" id="btn-innovation-page">Инновационная деятельность</button>
+    </nav>
+
+    <!-- Содержимое страниц -->
+    <main>
+        
+        <!-- ВКЛАДКА 1: ГЛАВНАЯ (Активна по умолчанию, готова к заполнению) -->
+        <div id="home-page" class="tab-content active">
+            <p><strong>Добро пожаловать на официальный сайт ООО "ПРОМОКОД"!</strong></p>
+        </div>
+
+        <!-- ВКЛАДКА 2: АККРЕДИТАЦИЯ ИТ -->
+        <div id="it-page" class="tab-content">
+            <p>Информация в Минцифры РФ для аккредитации ИТ-компании</p>
+            <p><strong>ИНН организации:</strong> 1800053797</p>
+            <p><strong>Полное наименование организации:</strong> ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ПРОМОКОД".</p>
+            <p>Мы разрабатываем прикладное программное обеспечение для промышленных контроллеров на языке программирования ST (входит в стандарт МЭК 61131-3). Практически всегда используем среду разработки CodeSys 3.5, включая различные ее варианты для конкретных контроллеров.</p>
+            <p>Также для программирования контроллеров используем язык FBD (входит в стандарт МЭК 61131-3), но значительно реже.</p>
+            <p>Для станций оператора используем SCADA системы АльфаРегул, Интраскада. При разработке прикладных программ для SCADA-систем приходится использовать скриптовые языки, например JavaScript.</p>
+            <p>Протокол передачи информации между программируемым контроллером и SCADA-системой - Modbus TCP, либо OPC UA.</p>
+        </div>
+
+        <!-- ВКЛАДКА 3: ИННОВАЦИОННАЯ ДЕЯТЕЛЬНОСТЬ -->
+        <div id="innovation-page" class="tab-content clearfix">
+            <img src="fasie_logo.png" alt="Фонд содействия инновациям" class="fasie-logo">
+            <p>При поддержке Фонда содействия инновациям по программе «Старт-ЦТ-1-2025 (очередь 2)» реализуется Разработка интеллектуального датчика факела на основе технологии машинного зрения для поддержания оптимального соотношения «газ-воздух» в многогорелочных котлах.</p>
+        </div>
+
+    </main>
+
+    <!-- Подвал страницы -->
+    <footer>
+        <div class="footer-contacts">
+            <p><strong>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ПРОМОКОД"</strong></p>
+            <p>Юридический адрес: 427160, Россия, Удмуртская Республика, м.о. Игринский район, д. Гереево, ул. Ключевая, д. 2</p>
+            <p>Эл.почта: <a href="mailto:promocode18@yandex.ru" class="email-link">promocode18@yandex.ru</a></p>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 ООО "ПРОМОКОД"</div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    function openTab(tabId) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        const buttons = document.querySelectorAll('nav button');
+        buttons.forEach(button => button.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById('btn-' + tabId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
