@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ООО ПРОМОКОД — Официальный сайт</title>
-	<link rel="icon" type="image/png" href="favicon.png">
     <!-- Подключение шрифта JetBrains Mono -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         * {
             box-sizing: border-box;
@@ -48,16 +48,19 @@
             gap: 20px;
         }
 
+        /* Логотип компании */
         .logo-img {
             height: 75px; 
             width: auto;
             display: block;
+            flex-shrink: 0; /* Защита логотипа от сжатия на экранах смартфонов */
         }
 
+        /* Изменено: Название компании стало черным (#000000) и размером 40px */
         .logo-text h1 {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 32px; 
-            color: #003366;
+            font-size: 40px; 
+            color: #000000;
             font-weight: 700;
             letter-spacing: -0.5px;
             line-height: 1.1;
@@ -184,18 +187,36 @@
                 margin: 10px;
                 padding: 15px;
             }
+            
+            /* Изменено: Сохраняем горизонтальное положение логотипа и текста на мобильных */
             .logo-area {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+                flex-direction: row; 
+                align-items: center;
+                gap: 12px;
             }
+
+            /* Уменьшаем шрифты на смартфонах, чтобы длинное название не ломало верстку */
+            .logo-text h1 {
+                font-size: 26px; 
+            }
+            
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .logo-img {
+                height: 50px; /* На смартфонах делаем логотип чуть компактнее для баланса */
+            }
+
             nav {
                 flex-direction: column;
             }
+            
             nav button {
                 width: 100%;
                 text-align: center;
             }
+            
             .fasie-logo {
                 float: none;
                 display: block;
@@ -213,13 +234,13 @@
         <div class="logo-area">
             <img src="logo.png" alt="Логотип Промокод" class="logo-img">
             <div class="logo-text">
-                <h1>ООО "ПРОМОКОД"</h1>
+                <h1>Промокод</h1>
                 <p>ИНН: 1800053797 | <a href="mailto:promocode18@yandex.ru" class="email-link">promocode18@yandex.ru</a></p>
             </div>
         </div>
     </header>
 
-    <!-- Меню навигации (Главная добавлена первой и сделана активной) -->
+    <!-- Меню навигации -->
     <nav>
         <button onclick="openTab('home-page')" id="btn-home-page" class="active">Главная</button>
         <button onclick="openTab('it-page')" id="btn-it-page">Аккредитация ИТ</button>
@@ -229,9 +250,9 @@
     <!-- Содержимое страниц -->
     <main>
         
-        <!-- ВКЛАДКА 1: ГЛАВНАЯ (Активна по умолчанию, готова к заполнению) -->
+        <!-- ВКЛАДКА 1: ГЛАВНАЯ -->
         <div id="home-page" class="tab-content active">
-            <p><strong>Добро пожаловать на официальный сайт ООО "ПРОМОКОД"</strong></p>
+            <p><strong>Добро пожаловать на официальный сайт ООО "ПРОМОКОД"!</strong></p>
         </div>
 
         <!-- ВКЛАДКА 2: АККРЕДИТАЦИЯ ИТ -->
@@ -243,11 +264,12 @@
             <p>Также для программирования контроллеров используем язык FBD (входит в стандарт МЭК 61131-3), но значительно реже.</p>
             <p>Для станций оператора используем SCADA системы АльфаРегул, Интраскада. При разработке прикладных программ для SCADA-систем приходится использовать скриптовые языки, например JavaScript.</p>
             <p>Протокол передачи информации между программируемым контроллером и SCADA-системой - Modbus TCP, либо OPC UA.</p>
-        </div>
+		</div>
 
         <!-- ВКЛАДКА 3: ИННОВАЦИОННАЯ ДЕЯТЕЛЬНОСТЬ -->
-        <div id="innovation-page" class="tab-content clearfix">
+        <div id="innovation-page" class="tab-content clearfix">       
             <img src="fasie_logo.png" alt="Фонд содействия инновациям" class="fasie-logo">
+
             <p>При поддержке Фонда содействия инновациям по программе «Старт-ЦТ-1-2025 (очередь 2)» реализуется Разработка интеллектуального датчика факела на основе технологии машинного зрения для поддержания оптимального соотношения «газ-воздух» в многогорелочных котлах.</p>
         </div>
 
